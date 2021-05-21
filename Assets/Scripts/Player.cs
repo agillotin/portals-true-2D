@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections;
+
 
 
 
@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float maxspeed;
-
+    [SerializeField] private float rollForce;
+    [SerializeField] private Transform RaycastStartTransform;
 
 
 
@@ -70,6 +71,7 @@ public class Player : MonoBehaviour
         }
     }
 }
+
 
 
 
