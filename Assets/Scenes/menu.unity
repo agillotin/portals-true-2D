@@ -340,9 +340,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941290489}
-        m_TargetAssemblyTypeName: menus, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 941290491}
+        m_TargetAssemblyTypeName: LoadingScreen, Assembly-CSharp
+        m_MethodName: LoadSceneAsync
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -857,6 +857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941290490}
   - component: {fileID: 941290489}
+  - component: {fileID: 941290491}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -890,6 +891,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941290491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941290488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afa6a7a9a5098247911c48726c475a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingScreenPrefab: {fileID: 2965166601433701213, guid: 80f1792f9e215fa459b5b664a7c35ad0, type: 3}
 --- !u!1 &943681170
 GameObject:
   m_ObjectHideFlags: 0

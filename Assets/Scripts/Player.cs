@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     private void MoveCanceled(InputAction.CallbackContext obj)
     {
         direction = 0;
-        moving = false;
+        animator.SetBool("moving", false);
     }
 
     private void MovePerformed(InputAction.CallbackContext obj)
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         {
             spriterenderer.flipX = true;
         }
-        moving = true;
+        animator.SetBool("moving", true);
     }
 
     private void JumpOnperformed(InputAction.CallbackContext obj)
@@ -76,16 +76,6 @@ public class Player : MonoBehaviour
         {
             canJump = false;
         }
-
-        if(moving == true)
-        {
-            animator.SetBool("moving", true);
-        }
-        
-        if(moving == false)
-        {
-            animator.SetBool("moving", false);
-        }
     }
 
     
@@ -95,6 +85,7 @@ public class Player : MonoBehaviour
     {
         rb2D = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
 
