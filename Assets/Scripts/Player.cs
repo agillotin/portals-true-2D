@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
-
-
-
-
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
@@ -22,8 +16,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private float direction;
     private bool canJump = false;
-    private bool moving = false;
-
+    public float horizontalspeed;
 
     private void OnEnable()
     {
@@ -66,7 +59,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        
+        horizontalspeed = Mathf.Abs(rb2D.velocity.x);
         var hit = Physics2D.Raycast(transform.position, new Vector2(0, -1), 0.001f);
         if (hit.collider != null)
         {
@@ -92,8 +85,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var horizontalSpeed = Mathf.Abs(rb2D.velocity.x);
-        if (horizontalSpeed < maxspeed)
+        if (horizontalspeed < maxspeed)
         {
             rb2D.AddForce(new Vector2(speed * direction, 0));
         }
